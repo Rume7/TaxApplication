@@ -50,10 +50,10 @@ public class ReportServlet extends HttpServlet {
             Double tax_exempt = employee.getTaxExempts();
             Double allowance = employee.getTaxableAllowance();
             
+            /**
+             * Report to be properly formatted later.
+             */
             document.add(new Paragraph("Hi  " + ID + ", here is your monthly Tax Report"));
-            document.add(new Paragraph(""));
-            document.add(new Paragraph(""));
-            document.add(new Paragraph(""));
             
             document.add(new Paragraph("Date:              " + new Date().toString()));
             document.add(new Paragraph("Employee ID:       " + ID));
@@ -84,5 +84,4 @@ public class ReportServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }
-
 }

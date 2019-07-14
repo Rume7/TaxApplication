@@ -12,25 +12,27 @@
         <title>Tax Report</title>
     </head>
     <body>
-        
+
         <h2>Tax Statement page</h2>
-        
+
         <input type="hidden" name="empID" value=empID<%=request.getParameter("employeeID")%> />
-        
+
+
+        <h3>To view tax report, <a href="report?employeeID=<%=request.getParameter("employeeID")%>">
+                Click here</a></h3>
+
         <!--
-        <h3>To view tax report, <a href="report?employeeID=<%=request.getParameter("employeeID")%>" onclick="javascript:nextAction(empID);">
+        Program to view tax report on a new tab on the browser.
+        <h3>To view tax report, <a href="report" onclick="javascript:nextAction(empID);">
                 Click here</a></h3>
-        -->
-        <h3>To view tax report, <a href="#anchor" onclick="javascript:nextAction(empID);">
-                Click here</a></h3>
-                
+        -->    
         <a href="login.jsp">Logout</a>
-        
+
     </body>
     <script type="text/javascript">
         function nextAction(empID) {
-            document.location.href("report?" + empID);
+            document.location.href("report?employeeID=" + empID);
         }
     </script>
-    
+
 </html>

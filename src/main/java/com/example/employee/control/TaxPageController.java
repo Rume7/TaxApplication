@@ -8,7 +8,6 @@ import com.example.employee_tax.entity.PAYE_TAX;
 import com.example.employee_tax.entity.TaxExempts;
 import com.example.employee_tax.entity.TaxableAllowance;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,15 +28,12 @@ public class TaxPageController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     
-    private Double monthlyTax ;
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
         if (request.getParameter("tax_report").equals("Create_Tax_Report")) {
             createTaxReport(request, response);
-            //viewReport(request, response);
             routePageTo(request, response, "view_report.jsp");
         }
     }
@@ -90,31 +86,7 @@ public class TaxPageController extends HttpServlet {
 
         // Calculate the monthly tax
         PAYE_TAX paye = new PAYE_TAX(employeeTax);
-        monthlyTax = paye.getPAYE_AMOUNT();
-    }
-    
-    private void viewReport(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        
-        response.setContentType("text/html;charset=UTF-8");
-
-        try (PrintWriter out = response.getWriter()) {
-
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Load Report</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Tax Report</h1>");
-
-            out.println("<h2>Your employee ID is " + request.getParameter("employeeID") + "</h2>");
-            out.println("<h2>Your First Name is " + request.getParameter("first_name") + "</h2>");
-            out.println("<h2>Your Last Name is " + request.getParameter("last_name") + "</h2>");
-            out.println("<h2>Your monthly tax is " + monthlyTax + "</h2>");
-            out.println("<a href='view_report.jsp'>Click to view report.</a>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        // monthlyTax = paye.getPAYE_AMOUNT();
     }
 
     @Override

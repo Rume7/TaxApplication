@@ -19,16 +19,16 @@ public class EmployeeEntity implements Serializable {
     @Column(name="Employee_ID")
     private String employeeID;
     
-    @Column(name="SOCIAL_SECURITY_NUMBER")
-    private String SSN;
-    
     @Column(name="FIRST_NAME")
     private String firstName;
+    
+    @Column(name="Middle Name")
+    private String middleName;
     
     @Column(name="LAST_NAME")
     private String lastName;
     
-    @Column(name="Official_Email")
+    @Column(name="OFFICIAL_EMAIL")
     private String employeeEmail;
     
     @Column(name="MONTHLY_GROSS_PAY")
@@ -37,8 +37,14 @@ public class EmployeeEntity implements Serializable {
     @Column(name="MARITAL_STATUS")
     private String maritalStatus;
     
-    @Column(name="AGE_IN_YEARS")
-    private Integer age;
+    @Column(name="TIN")
+    private String TIN;
+    
+    @Column(name="COMPANY")
+    private String company;
+    
+    @Column(name="DEPT")
+    private String department;
     
     public String getEmployeeID() {
         return employeeID;
@@ -46,14 +52,6 @@ public class EmployeeEntity implements Serializable {
 
     public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
-    }
-
-    public String getSSN() {
-        return SSN;
-    }
-
-    public void setSSN(String SSN) {
-        this.SSN = SSN;
     }
 
     public String getFirstName() {
@@ -96,19 +94,45 @@ public class EmployeeEntity implements Serializable {
         this.maritalStatus = maritalStatus;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
+
+    public String getTIN() {
+        return TIN;
+    }
+
+    public void setTIN(String TIN) {
+        this.TIN = TIN;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 31 * hash + Objects.hashCode(this.employeeID);
-        hash = 89 * hash + Objects.hashCode(this.SSN);
+        hash = 89 * hash + Objects.hashCode(this.TIN);
         return hash;
     }
 
@@ -127,7 +151,7 @@ public class EmployeeEntity implements Serializable {
         if (!Objects.equals(this.employeeID, other.employeeID)) {
             return false;
         }
-        if (!Objects.equals(this.SSN, other.SSN)) {
+        if (!Objects.equals(this.TIN, other.TIN)) {
             return false;
         }
         return true;

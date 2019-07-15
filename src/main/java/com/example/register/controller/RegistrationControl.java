@@ -53,9 +53,9 @@ public class RegistrationControl extends HttpServlet {
             // Check if the registration email is in the database
             RegisterUser registeredPerson = registerUserFacade.find(emailAdd);
 
-            if (registeredPerson == null) {
+            if (registeredPerson == null) {             // if user not in database
 
-                // Hash the password 
+                // Encrypt the password by hashing
                 String hashedPassword = PasswordHash.getSaltedHash(password);
                 
                 RegisterUser registration = new RegisterUser();
@@ -77,7 +77,7 @@ public class RegistrationControl extends HttpServlet {
                 dispatcher = request.getRequestDispatcher("/login.jsp");
                 dispatcher.forward(request, response);
             } else {
-                // Print individual has been registered
+                // Print individual has been registered by stating that user exists
                 dispatcher = request.getRequestDispatcher("/register.jsp");
                 dispatcher.forward(request, response);
             }

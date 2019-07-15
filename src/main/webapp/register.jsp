@@ -12,7 +12,8 @@
         <title>Registration Page</title>
     </head>
     <body>
-        <h2>Registration Page</h2>
+        <h1>Welcome to Tax Application System!</h1>
+        <h3>Register to create your employee profile</h3>
         
         <form method="post" action="RegistrationControl">
             <table>

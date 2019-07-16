@@ -74,7 +74,7 @@ public class RegistrationControl extends HttpServlet {
                 registerUserFacade.create(registration);
                 loginUserFacade.create(loginUser);
 
-                dispatcher = request.getRequestDispatcher("/login.jsp");
+                dispatcher = request.getRequestDispatcher("/create_employee_profile.jsp");
                 dispatcher.forward(request, response);
             } else {
                 // Print individual has been registered by stating that user exists

@@ -53,5 +53,7 @@
                 </tbody>
             </table>
         </form>
+        
+        <a href="index.html"><h3>Cancel registration</h3></a>
     </body>
 </html>

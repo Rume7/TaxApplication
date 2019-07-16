@@ -45,6 +45,9 @@ public class EmployeeEntity implements Serializable {
     
     @Column(name="DEPT")
     private String department;
+
+    public EmployeeEntity() {
+    }
     
     public String getEmployeeID() {
         return employeeID;
@@ -151,14 +154,11 @@ public class EmployeeEntity implements Serializable {
         if (!Objects.equals(this.employeeID, other.employeeID)) {
             return false;
         }
-        if (!Objects.equals(this.TIN, other.TIN)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.TIN, other.TIN);
     }
 
     @Override
     public String toString() {
-        return "Employee[ id=" + employeeID + " ]";
+        return "Employee id = " + employeeID;
     }
 }

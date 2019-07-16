@@ -16,45 +16,43 @@
         <h1>Welcome to Tax Application System!</h1>
         <h3>Create your employee profile</h3>
 
-
         <form method="POST" action="EmployeeCreatorServlet">
-
             <table>
                 <tr>
+                    <td>Employee ID </td>
+                    <td><input type="text" name="employee_id" value="employee_id" placeholder="Employee ID" required /></td>
+                </tr>
+                <tr>
                     <td>First Name: </td>
-                    <td><input type="text" name="first_name" value="first_name" placeholder="First Name" required=""/></td>
+                    <td><input type="text" name="first_name" value="first_name" placeholder="First Name" required /></td>
                 </tr>
                 <tr>
                     <td>Middle Name</td>
-                    <td><input type="text" name="firstName" value="first_name" placeholder="First Name" required=""/></td>
+                    <td><input type="text" name="middle_name" value="middle_name" placeholder="Middle Name" required /></td>
                 </tr>
                 <tr>
                     <td>Last Name</td>
-                    <td><input type="text" name="last_name" value="last_name" placeholder="Last Name" required=""/></td>
+                    <td><input type="text" name="last_name" value="last_name" placeholder="Last Name" required /></td>
                 </tr>
                 <tr>
                     <td>Email Address</td>
-                    <td><input type="email" name="email_address" value="email_address" placeholder="Email Address" required=""/></td>
-                </tr>
-                <tr>
-                    <td>Employee ID </td>
-                    <td><input type="text" name="employee_id" value="employee_id" placeholder="Employee ID" required=""/></td>
+                    <td><input type="email" name="email_address" value="email_address" placeholder="Email Address" required /></td>
                 </tr>
                 <tr>
                     <td>Marital Status</td>
-                    <td><input type="text" name="marital_status" value="marital_status" placeholder="Marital Status" required=""/></td>
+                    <td><input type="text" name="marital_status" value="marital_status" placeholder="Marital Status" required /></td>
                 </tr>
                 <tr>
                     <td>Monthly Wage</td>
-                    <td><input type="text" name="monthly_wage" value="monthly_wage" placeholder="Monthly Wage" required=""/></td>
+                    <td><input type="text" name="monthly_wage" value="monthly_wage" placeholder="Monthly Wage" required /></td>
                 </tr>
                 <tr>
                     <td>Company</td>
-                    <td><input type="text" name="company" value="company" placeholder="Company Name" required=""/></td>
+                    <td><input type="text" name="company" value="company" placeholder="Company Name" required /></td>
                 </tr>
                 <tr>
                     <td>Department</td>
-                    <td><input type="text" name="department" value="department" placeholder="Department" required=""/></td>
+                    <td><input type="text" name="department" value="department" placeholder="Department" required /></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -62,5 +60,7 @@
                 </tr>
             </table>
         </form>
+        
+        <a href="index.html">Home Page</a>
     </body>
 </html>

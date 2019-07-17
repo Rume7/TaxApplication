@@ -15,14 +15,18 @@ public class RegisterUser implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name="Email_Address")
+    @Column(name="EMAIL_ADDRESS")
     private String email;
     
-    @Column(name="First_Name")
+    @Column(name="FIRST_NAME")
     private String firstName;
     
-    @Column(name="Last_Name")
+    @Column(name="MIDDLE_NAME")
+    private String middleName;
+    
+    @Column(name="LAST_NAME")
     private String lastName;
+    
     private String password;
     private String phoneNumber;
     private String company;
@@ -36,6 +40,14 @@ public class RegisterUser implements Serializable {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+    
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
     
     public String getLastName() {

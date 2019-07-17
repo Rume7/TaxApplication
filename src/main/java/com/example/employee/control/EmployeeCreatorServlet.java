@@ -32,29 +32,25 @@ public class EmployeeCreatorServlet extends HttpServlet {
 
         RequestDispatcher dispatcher;
 
-        if (request.getParameter("SUBMIT").equals("SUBMIT")) {
+        if (request.getParameter("submit").equals("SUBMIT")) {
 
             // Get employee parameters
             String employeeID = request.getParameter("employee_id");
-            String firstName = request.getParameter("first_name");
-            String middleName = request.getParameter("middle_name");
-            String lastName = request.getParameter("last_name");
             String emailAddress = request.getParameter("email_address");
             String maritalStatus = request.getParameter("marital_status");
             Double monthlyWage = Double.parseDouble(request.getParameter("monthly_wage"));
             String company = request.getParameter("company");
             String department = request.getParameter("department");
 
-            if (isEmployeeInDatabase(employeeID)) {
+            EmployeeEntity employeeInDatabase = employeeEntityFacade.find(employeeID);
+            
+            if (employeeInDatabase == null) {
                 
                 // Create a Tax Identification number for the employee.
                 String taxNumber = TINGenerator.getTaxIdentificationNumber();
 
                 EmployeeEntity employeeEntity = new EmployeeEntity();
                 employeeEntity.setEmployeeID(employeeID);
-                employeeEntity.setFirstName(firstName);
-                employeeEntity.setMiddleName(middleName);
-                employeeEntity.setLastName(lastName);
                 employeeEntity.setEmployeeEmail(emailAddress);
                 employeeEntity.setMaritalStatus(maritalStatus);
                 employeeEntity.setMonthlyWage(monthlyWage);
@@ -67,7 +63,7 @@ public class EmployeeCreatorServlet extends HttpServlet {
                 // Send confirmation email to employee containing his Tax ID
                 EmailUtil emailUtility = new EmailUtil();
                 emailUtility.setSubject("Your Tax Identification Number (TIN)");
-                String message = "Dear " + firstName + ", \n\n"
+                String message = "Dear " + employeeID + ", \n\n"
                         + "Congratulations on your successful registration.\n"
                         + "Your Tax ID is: " + taxNumber + "\n\nRegards,\nRubellite Inc.";
                 
@@ -77,7 +73,7 @@ public class EmployeeCreatorServlet extends HttpServlet {
                 String passwordSender = "";
                 String recipientEmail = "@gmail.com";
                 //String recipientEmail = emailAddress;
-                emailUtility.sendEmail(sender, passwordSender, recipientEmail);
+                //emailUtility.sendEmail(sender, passwordSender, recipientEmail);
 
                 dispatcher = request.getRequestDispatcher("/login.jsp");
                 dispatcher.forward(request, response);

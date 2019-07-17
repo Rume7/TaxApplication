@@ -14,13 +14,17 @@
     <body>
         <h1>Welcome to Tax Application System!</h1>
         <h3>Register to create your employee profile</h3>
-        
+
         <form method="post" action="RegistrationControl">
             <table>
                 <tbody>
                     <tr>
                         <td>First Name</td>
                         <td><input type="text" name="first_name" required /></td>
+                    </tr>
+                    <tr>
+                        <td>Middle Name</td>
+                        <td><input type="text" name="middle_name" value="middle_name" placeholder="Middle Name" required /></td>
                     </tr>
                     <tr>
                         <td>Last Name</td>
@@ -53,7 +57,7 @@
                 </tbody>
             </table>
         </form>
-        
+
         <a href="index.html"><h3>Cancel registration</h3></a>
     </body>
 </html>

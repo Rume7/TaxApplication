@@ -19,15 +19,6 @@ public class EmployeeEntity implements Serializable {
     @Column(name="Employee_ID")
     private String employeeID;
     
-    @Column(name="FIRST_NAME")
-    private String firstName;
-    
-    @Column(name="Middle Name")
-    private String middleName;
-    
-    @Column(name="LAST_NAME")
-    private String lastName;
-    
     @Column(name="OFFICIAL_EMAIL")
     private String employeeEmail;
     
@@ -57,21 +48,6 @@ public class EmployeeEntity implements Serializable {
         this.employeeID = employeeID;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public String getEmployeeEmail() {
         return employeeEmail;
@@ -95,14 +71,6 @@ public class EmployeeEntity implements Serializable {
 
     public void setMaritalStatus(String maritalStatus) {
         this.maritalStatus = maritalStatus;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
     }
 
     public String getTIN() {

@@ -23,18 +23,6 @@
                     <td><input type="text" name="employee_id" value="employee_id" placeholder="Employee ID" required /></td>
                 </tr>
                 <tr>
-                    <td>First Name: </td>
-                    <td><input type="text" name="first_name" value="first_name" placeholder="First Name" required /></td>
-                </tr>
-                <tr>
-                    <td>Middle Name</td>
-                    <td><input type="text" name="middle_name" value="middle_name" placeholder="Middle Name" required /></td>
-                </tr>
-                <tr>
-                    <td>Last Name</td>
-                    <td><input type="text" name="last_name" value="last_name" placeholder="Last Name" required /></td>
-                </tr>
-                <tr>
                     <td>Email Address</td>
                     <td><input type="email" name="email_address" value="email_address" placeholder="Email Address" required /></td>
                 </tr>
@@ -56,7 +44,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="SUBMIT" /></td>
+                    <td><input type="submit" name="submit" value="SUBMIT" /></td>
                 </tr>
             </table>
         </form>

@@ -1,5 +1,6 @@
 package com.example.register.boundary;
 
+import com.example.employee.boundary.AbstractFacade;
 import com.example.register.entity.RegisterUser;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

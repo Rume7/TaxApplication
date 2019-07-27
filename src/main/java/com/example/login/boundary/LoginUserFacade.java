@@ -1,5 +1,6 @@
 package com.example.login.boundary;
 
+import com.example.employee.boundary.AbstractFacade;
 import com.example.login.entity.LoginUser;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

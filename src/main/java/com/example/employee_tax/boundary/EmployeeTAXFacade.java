@@ -1,5 +1,6 @@
 package com.example.employee_tax.boundary;
 
+import com.example.employee.boundary.AbstractFacade;
 import com.example.employee_tax.entity.EmployeeTAX;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

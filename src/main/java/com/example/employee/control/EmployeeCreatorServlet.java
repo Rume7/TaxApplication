@@ -2,8 +2,8 @@ package com.example.employee.control;
 
 import com.example.employee.boundary.EmployeeEntityFacade;
 import com.example.employee.entity.EmployeeEntity;
-import com.example.utility.EmailUtil;
-import com.example.utility.TINGenerator;
+import com.example.email_tin_services.EmailUtil;
+import com.example.email_tin_services.TINGenerator;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;

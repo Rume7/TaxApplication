@@ -4,7 +4,7 @@ import com.example.login.boundary.LoginUserFacade;
 import com.example.login.entity.LoginUser;
 import com.example.register.boundary.RegisterUserFacade;
 import com.example.register.entity.RegisterUser;
-import com.example.utility.PasswordHash;
+import com.example.email_tin_services.PasswordHash;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

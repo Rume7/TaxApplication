@@ -1,4 +1,4 @@
-package com.example.utility;
+package com.example.email_tin_services;
 
 import java.security.SecureRandom;
 import javax.crypto.SecretKey;

@@ -32,5 +32,7 @@
                 </tbody>
             </table>            
         </form>      
+        <br/><br />
+        <a href="index.html">Index page</a>
     </body>
 </html>

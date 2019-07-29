@@ -1,4 +1,4 @@
-package com.example.email_tin_services;
+package com.example.email_tin_services.model;
 
 import java.util.Random;
 

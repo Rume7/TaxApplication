@@ -2,7 +2,7 @@ package com.example.login.controller;
 
 import com.example.login.boundary.LoginUserFacade;
 import com.example.login.entity.LoginUser;
-import com.example.email_tin_services.PasswordHash;
+import com.example.email_tin_services.model.PasswordHash;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;

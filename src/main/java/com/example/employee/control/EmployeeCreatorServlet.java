@@ -1,9 +1,10 @@
 package com.example.employee.control;
 
+import com.example.email_tin_services.controller.EmailService;
+import com.example.email_tin_services.model.Credentials;
 import com.example.employee.boundary.EmployeeEntityFacade;
 import com.example.employee.entity.EmployeeEntity;
-import com.example.email_tin_services.EmailUtil;
-import com.example.email_tin_services.TINGenerator;
+import com.example.email_tin_services.model.TINGenerator;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -61,20 +62,17 @@ public class EmployeeCreatorServlet extends HttpServlet {
                 employeeEntityFacade.create(employeeEntity);
 
                 // Send confirmation email to employee containing his Tax ID
-                EmailUtil emailUtility = new EmailUtil();
-                emailUtility.setSubject("Your Tax Identification Number (TIN)");
-                String message = "Dear " + employeeID + ", \n\n"
+                String subject = "Your Tax Identification Number (TIN)";
+                String body = "Dear " + employeeID + ", \n\n"
                         + "Congratulations on your successful registration.\n"
                         + "Your Tax ID is: " + taxNumber + "\n\nRegards,\nRubellite Inc.";
                 
-                emailUtility.setMessageBody(message);
+                Credentials credential = new Credentials();
+                credential.setTo(emailAddress);
                 
-                String sender = "@gmail";
-                String passwordSender = "";
-                String recipientEmail = "@gmail.com";
-                //String recipientEmail = emailAddress;
-                //emailUtility.sendEmail(sender, passwordSender, recipientEmail);
-
+                EmailService service = new EmailService(subject, body);
+                service.sendEmail();
+                
                 dispatcher = request.getRequestDispatcher("/login.jsp");
                 dispatcher.forward(request, response);
             } else {

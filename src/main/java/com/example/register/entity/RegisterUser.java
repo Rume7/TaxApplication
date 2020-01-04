@@ -18,6 +18,9 @@ public class RegisterUser implements Serializable {
     @Column(name="EMAIL_ADDRESS")
     private String email;
     
+    @Column(name="EmployeeID")
+    private String employeeID;
+    
     @Column(name="FIRST_NAME")
     private String firstName;
     
@@ -34,6 +37,14 @@ public class RegisterUser implements Serializable {
     public RegisterUser() {
     }
  
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+    
     public String getFirstName() {
         return firstName;
     }

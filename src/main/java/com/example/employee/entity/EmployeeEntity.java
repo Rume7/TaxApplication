@@ -48,7 +48,6 @@ public class EmployeeEntity implements Serializable {
         this.employeeID = employeeID;
     }
 
-
     public String getEmployeeEmail() {
         return employeeEmail;
     }

@@ -39,6 +39,7 @@ public class RegistrationControl extends HttpServlet {
         RequestDispatcher dispatcher;
 
         String first_name = request.getParameter("first_name");
+        String middle_name = request.getParameter("middle_name");
         String last_name = request.getParameter("last_name");
         String emailAdd = request.getParameter("emailAddress");
         String password = request.getParameter("password");
@@ -47,6 +48,7 @@ public class RegistrationControl extends HttpServlet {
         String company = request.getParameter("company");
 
         if (!password.equals(confirmPassword)) {
+            // Instruct user to input same password in password and confirm password textfield using Javascript 
             dispatcher = request.getRequestDispatcher("/register.jsp");
             dispatcher.forward(request, response);
         } else {
@@ -62,6 +64,7 @@ public class RegistrationControl extends HttpServlet {
                 LoginUser loginUser = new LoginUser();
 
                 registration.setFirstName(first_name);
+                registration.setMiddleName(middle_name);
                 registration.setLastName(last_name);
                 registration.setEmail(emailAdd);
                 registration.setPassword(hashedPassword);
@@ -74,7 +77,8 @@ public class RegistrationControl extends HttpServlet {
                 registerUserFacade.create(registration);
                 loginUserFacade.create(loginUser);
 
-                dispatcher = request.getRequestDispatcher("/create_employee_profile.jsp");
+                dispatcher = request.getRequestDispatcher("/confirm_registration.jsp");
+                //dispatcher = request.getRequestDispatcher("/create_employee_profile.jsp");
                 dispatcher.forward(request, response);
             } else {
                 // Print individual has been registered by stating that user exists

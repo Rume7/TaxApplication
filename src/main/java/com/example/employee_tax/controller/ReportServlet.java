@@ -2,6 +2,9 @@ package com.example.employee_tax.controller;
 
 import com.example.employee_tax.boundary.EmployeeTAXFacade;
 import com.example.employee_tax.entity.EmployeeTAX;
+import com.example.register.boundary.RegisterUserFacade;
+import com.example.register.entity.RegisterUser;
+import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
@@ -26,6 +29,9 @@ public class ReportServlet extends HttpServlet {
     
     @EJB
     private EmployeeTAXFacade employeeTAXFacade;
+    
+    @EJB
+    RegisterUserFacade registerUserFacade;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -34,6 +40,7 @@ public class ReportServlet extends HttpServlet {
 
         String employeeID = request.getParameter("employeeID");
         EmployeeTAX employee = employeeTAXFacade.find(employeeID);
+        RegisterUser employeeUser = registerUserFacade.find(employeeID);
         
         try {
             Document document = new Document();
@@ -43,8 +50,10 @@ public class ReportServlet extends HttpServlet {
             document.addCreationDate();
             document.addTitle("Monthly Tax Report");
             
-            
             String ID = employee.getEmployeeID();
+            String firstName = employeeUser.getFirstName();
+            String middleName=  employeeUser.getMiddleName();
+            String lastName = employeeUser.getLastName();
             Double grossTax = employee.getGrossTaxableIncome();
             Double netTax = employee.getNetTaxableIncome();
             Double tax_exempt = employee.getTaxExempts();
@@ -53,10 +62,13 @@ public class ReportServlet extends HttpServlet {
             /**
              * Report to be properly formatted later.
              */
-            document.add(new Paragraph("Hi  " + ID + ", here is your monthly Tax Report"));
+            document.add(new Paragraph("Hi  " + firstName + ", here is your Tax Report for the month of ..."));
             
             document.add(new Paragraph("Date:              " + new Date().toString()));
+            document.add(Chunk.NEWLINE);
             document.add(new Paragraph("Employee ID:       " + ID));
+            document.add(new Paragraph("Employee Name:       " + firstName + " " + middleName + " " + lastName));
+            document.add(Chunk.NEWLINE);
             document.add(new Paragraph("Gross Tax amount:  " + String.format("$%.2f", grossTax)));
             document.add(new Paragraph("Net Tax amount:    " + String.format("$%.2f", netTax)));
             document.add(new Paragraph("Tax Exempt amount: " + String.format("$%.2f", tax_exempt)));

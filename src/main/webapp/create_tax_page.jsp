@@ -9,31 +9,41 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Create Report</title>
+        <title>Employee Tax Page</title>
     </head>
     <body>
         
         <h2>Create an employee tax profile page</h2>
         <h4>Fill in the form below to view your tax profile for the month</h4>
         
+        <jsp:useBean id="registerUserBean" scope="page" class="com.example.register.entity.RegisterUser" /> 
+        
         <form method="post" action="TaxPageController">
+            <!--     This page updates the employee's tax profile. Employee ID, First name, Middle name, last name 
+                       and other parameters inputted during the registration
+                       are automatically pulled from the database and grayed out.
+            -->
             <table>
                 <tbody>
                     <tr>
                         <td>Employee ID</td>
-                        <td><input type="text" name="employeeID" value="" required /></td>
+                        <td><input type="text" name="employeeID" value="registerUserBean.employeeID" readonly="true" /></td>
                     </tr>
                     <tr>
                         <td>First Name</td>
-                        <td><input type="text" name="first_name" value="" required /></td>
+                        <td><input type="text" name="first_name" value="registerUserBean.firstName" readonly='true"' /></td>
+                    </tr>
+                    <tr>
+                        <td>Middle Name</td>
+                        <td><input type="text" name="middle_name" value="registerUserBean.middleName" readonly="true" /></td>
                     </tr>
                     <tr>
                         <td>Last Name</td>
-                        <td><input type="text" name="last_name" value="" required /></td>
+                        <td><input type="text" name="last_name" value="registerUserBean.lastName" readonly="true" /></td>
                     </tr>
                     <tr>
                         <td>Basic Monthly Income</td>
-                        <td><input type="text" name="monthly_basic" value="" required /></td>
+                        <td><input type="text" autofocus="true" name="monthly_basic" value="" required /></td>
                     </tr>
                     <tr>
                         <td>Housing</td>

@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registration Page</title>
@@ -19,12 +19,16 @@
             <table>
                 <tbody>
                     <tr>
+                        <td>Employee ID</td>
+                        <td><input type="text" name="employeeID" required /></td>
+                    </tr>
+                    <tr>
                         <td>First Name</td>
                         <td><input type="text" name="first_name" required /></td>
                     </tr>
                     <tr>
                         <td>Middle Name</td>
-                        <td><input type="text" name="middle_name" value="middle_name" placeholder="Middle Name" required /></td>
+                        <td><input type="text" name="middle_name" required /></td>
                     </tr>
                     <tr>
                         <td>Last Name</td>

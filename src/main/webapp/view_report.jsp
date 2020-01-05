@@ -12,11 +12,9 @@
         <title>Tax Report</title>
     </head>
     <body>
-
         <h2>Tax Statement page</h2>
 
         <input type="hidden" name="empID" value=empID<%=request.getParameter("employeeID")%> />
-
 
         <h3>To view tax report, <a href="report?employeeID=<%=request.getParameter("employeeID")%>">
                 Click here</a></h3>
@@ -34,5 +32,4 @@
             document.location.href("report?employeeID=" + empID);
         }
     </script>
-
 </html>

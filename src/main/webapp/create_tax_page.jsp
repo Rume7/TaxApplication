@@ -16,7 +16,7 @@
         <h2>Create an employee tax profile page</h2>
         <h4>Fill in the form below to view your tax profile for the month</h4>
         
-        <jsp:useBean id="registerUserBean" scope="page" class="com.example.register.entity.RegisterUser" /> 
+        <jsp:useBean id="registerUserBean" scope="application" class="com.example.register.entity.RegisterUser" /> 
         
         <form method="post" action="TaxPageController">
             <!--     This page updates the employee's tax profile. Employee ID, First name, Middle name, last name 
@@ -27,19 +27,23 @@
                 <tbody>
                     <tr>
                         <td>Employee ID</td>
-                        <td><input type="text" name="employeeID" value="registerUserBean.employeeID" readonly="true" /></td>
+                        <td><input type="text" name="employeeID" value="" /></td>
+                        <!--<td><input type="text" name="employeeID" value="registerUserBean.employeeID" readonly="true" /></td>-->
                     </tr>
                     <tr>
                         <td>First Name</td>
-                        <td><input type="text" name="first_name" value="registerUserBean.firstName" readonly='true"' /></td>
+                        <td><input type="text" name="first_name" value="" /></td>
+                        <!--<td><input type="text" name="first_name" value="registerUserBean.firstName" readonly='true"' /></td>-->
                     </tr>
                     <tr>
                         <td>Middle Name</td>
-                        <td><input type="text" name="middle_name" value="registerUserBean.middleName" readonly="true" /></td>
+                        <td><input type="text" name="middle_name" value="" /></td>
+                        <!--<td><input type="text" name="middle_name" value="registerUserBean.middleName" readonly="true" /></td>-->
                     </tr>
                     <tr>
                         <td>Last Name</td>
-                        <td><input type="text" name="last_name" value="registerUserBean.lastName" readonly="true" /></td>
+                        <td><input type="text" name="last_name" value="" /></td>
+                        <!--<td><input type="text" name="last_name" value="registerUserBean.lastName" readonly="true" /></td>-->
                     </tr>
                     <tr>
                         <td>Basic Monthly Income</td>

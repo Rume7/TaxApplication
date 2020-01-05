@@ -38,6 +38,7 @@ public class RegistrationControl extends HttpServlet {
 
         RequestDispatcher dispatcher;
 
+        String empID = request.getParameter("employeeID");
         String first_name = request.getParameter("first_name");
         String middle_name = request.getParameter("middle_name");
         String last_name = request.getParameter("last_name");
@@ -63,6 +64,7 @@ public class RegistrationControl extends HttpServlet {
                 RegisterUser registration = new RegisterUser();
                 LoginUser loginUser = new LoginUser();
 
+                registration.setEmployeeID(empID);
                 registration.setFirstName(first_name);
                 registration.setMiddleName(middle_name);
                 registration.setLastName(last_name);

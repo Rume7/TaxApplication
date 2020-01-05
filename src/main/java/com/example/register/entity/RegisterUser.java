@@ -15,11 +15,11 @@ public class RegisterUser implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name="EMAIL_ADDRESS")
-    private String email;
-    
     @Column(name="EmployeeID")
     private String employeeID;
+    
+    @Column(name="EMAIL_ADDRESS")
+    private String email;
     
     @Column(name="FIRST_NAME")
     private String firstName;

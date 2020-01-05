@@ -31,7 +31,7 @@ public class ReportServlet extends HttpServlet {
     private EmployeeTAXFacade employeeTAXFacade;
     
     @EJB
-    RegisterUserFacade registerUserFacade;
+    private RegisterUserFacade registerUserFacade;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

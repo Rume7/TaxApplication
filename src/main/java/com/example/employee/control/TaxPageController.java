@@ -99,5 +99,4 @@ public class TaxPageController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }
-
 }

@@ -23,6 +23,5 @@ public class RegisterUserFacade extends AbstractFacade<RegisterUser> {
 
     public RegisterUserFacade() {
         super(RegisterUser.class);
-    }
-    
+    }    
 }

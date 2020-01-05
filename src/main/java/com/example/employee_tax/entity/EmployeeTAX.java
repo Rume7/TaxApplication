@@ -15,7 +15,7 @@ public class EmployeeTAX implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
-    @Column(name="Employee_ID")
+    @Column(name="EmployeeID")
     private String employeeID;
     
     @Column(name="MONTHLY_GROSS_INCOME")

@@ -57,9 +57,9 @@ public class Credentials {
     public Credentials() {
         final Properties creds = new Properties();
         
-        from = "electengrhume@gmail.com";
-        password = "Raconteur7!";
-        to = "rubytech7@gmail.com";
+        from = "electengreuben@gmail.com";
+        password = "rappingtale!8";
+        to = "rubytech@gmail.com";
         this.setFrom(from);
         this.setPassword(password);
         this.setTo(to);

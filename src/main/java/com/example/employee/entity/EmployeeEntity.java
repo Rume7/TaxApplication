@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author E238958
+ * @author Rhume
  */
 @Entity(name="Employee")
 public class EmployeeEntity implements Serializable {

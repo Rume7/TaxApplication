@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author E238958
+ * @author Rhume
  */
 @Stateless
 public class RegisterUserFacade extends AbstractFacade<RegisterUser> {

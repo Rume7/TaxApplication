@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author E238958
+ * @author Rhume
  */
 @Entity(name = "Login_User")
 public class LoginUser implements Serializable {
